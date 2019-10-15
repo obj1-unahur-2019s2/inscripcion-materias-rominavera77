@@ -1,14 +1,51 @@
+/*class Carrera {
+	var nombre = "nombre"
+	var materiaDeLaCarrera = []
+}
+*/
+import materias.*
+
 object programacion {
-	var property materiaDeLaCarrera = ["elementosDeProgramacion", "matematica1", "objetos1", 
-									   "objetos2", "objetos3", "trabajoFinal", "basesDeDatos"]
+	var property materiasDeLaCarrera = [new Materia(nombre = elementosDeProgramacion), 
+										new Materia(nombre = matematica1), 
+										new Materia(nombre = objetos1), 
+										new Materia(nombre = objetos2), 
+										new Materia(nombre = objetos3), 
+										new Materia(nombre = trabajoFinal),
+										new Materia(nombre = basesDeDatos)
+										]
+	
+	method materiaPerteneceA(carrera, materiaAComparar){
+		self.materiasDeLaCarrera().any({materia => materia == materiaAComparar})
+	}									
+	
+	
 }
 
 object medicina {
-	var property materiaDeLaCarrera = ["quimica", "biologia1", "biologia2", "anatomiaGeneral"]
+	var property materiasDeLaCarrera = [new Materia(nombre = quimica), 
+										new Materia(nombre = biologia1),
+										new Materia(nombre = biologia2),
+										new Materia(nombre = anatomiaGeneral)
+										]
+	
+	method materiaPerteneceA(materiaAComparar){
+		self.materiasDeLaCarrera().any({materia => materia == materiaAComparar})
+	}									
+	
 }
 
 object derecho {
-	var property materiaDeLaCarrera = [ "latin", "derechoRomano", "historiaDelDerechoArgentino",
-										"derechoPenal1", "derechoPenal2"]
+	var property materiasDeLaCarrera = [new Materia(nombre = latin),
+										new Materia(nombre = derechoRomano), 
+										new Materia(nombre = historiaDelDerechoArgentino),
+										new Materia(nombre = derechoPenal1),
+										new Materia(nombre = derechoPenal2)
+										]
+
+	method materiaPerteneceA(materiaAComparar){
+		self.materiasDeLaCarrera().any({materia => materia == materiaAComparar})
+	}									
+	
 }
 
