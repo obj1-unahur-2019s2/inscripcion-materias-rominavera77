@@ -52,8 +52,8 @@ class Estudiante {
 		return carreras.flatmap({carrera => carrera.materia()})
 	}
 	
-	method materiaPerteneceAUnaCarrera(materiaAInscribirse){
-		self.nombreDeMateriasQueTieneQueCursar().any({m => materia == materiaAInscribirse})
+	method materiaEstaEnCarreraQueEstoyCursando(materiaAInscribirse){
+		self.nombreDeMateriasQueTieneQueCursar().any({m => m == materiaAInscribirse})
 	}									
 	
 	method puedeCursar(unaMateria){
@@ -72,7 +72,7 @@ class Estudiante {
     P.ej., para que un estudiante pueda inscribirse a Objetos 2, es necesario tener aprobadas Objetos 1 y Matemática 1.
 	*/
 		
-		return 	self.materiaPerteneceAUnaCarrera(unaMateria) and
+		return 	self.materiaEstaEnCarreraQueEstoyCursando(unaMateria) and
 			 	not self.tieneAprobada(unaMateria) and
 			 	not self.materiasInscriptas().contains({materia => materia == unaMateria}) and
 			 	self.puedeCursar(unaMateria)
