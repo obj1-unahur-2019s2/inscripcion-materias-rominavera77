@@ -1,0 +1,43 @@
+import materias.*
+import estudiante.*
+import carreras.*
+
+describe "Test Estudiante"{
+	
+	
+	var elementosDeProgramacion = new Materia()
+	var matematica1 = new Materia()
+	var objetos1 = new Materia()
+	var basesDeDatos = new Materia()
+	var quimica = new Materia().
+	var biologia1 = new Materia()	
+	var objetos2 = new Materia(requisitos = [ojetos1, matematica1], cupo = 3)
+	var objetos3 = new Materia(requisitos = [objetos2, basesDeDatos])
+	var programacionConcurrente = new Materia( requisitos = [objetos1, basesDeDatos])
+	var biologia2 = new Materia( requisitos = biologia1)
+	
+	var roque = new Estudiante( aprobaciones = [  elementosDeProgramacion, matematica1, objetos1, basesDeDatos,
+												  quimica, biologia1]
+								)
+	
+	var luisa = new Estudiante ( aprobaciones = [ elementosDeProgramacion, objetos1, matematica1 ])
+	var romina = new Estudiante ( aprobaciones = [ elementosDeProgramacion, objetos1, matematica1 ])
+	var alicia = new Estudiante ( aprobaciones = [ elementosDeProgramacion, objetos1, matematica1 ])
+	var ana = new Estudiante ( aprobaciones = [elementosDeProgramacion])
+	
+	test "Roque puede cursar Objetos 2 solamente"{
+		assert.that(roque.puedeCursar(objetos2))		
+		assert.notThat(roque.puedeCursar(objetos3))
+		assert.notThat(roque.puedeCursar(objetos1))
+	}
+	
+	
+	test "Roque puede cursar otras materias"{
+		
+	}
+	
+	
+	
+	assert.that(true)
+
+}

@@ -20,7 +20,8 @@ La nota con la que un estudiante aprobó una materia, no puede ser atributo del 
 
 Implementar un modelo que permita resolver los siguientes **requerimientos**. 
 
-1. Registrar una materia aprobada por un estudiante indicando la nota obtenida. Si el estudiante ya tiene registrada la aprobación de la materia, se debe lanzar un error. 
+1. Registrar una materia aprobada por un estudiante indicando la nota obtenida. Si el estudiante ya tiene registrada la aprobación de la materia, 
+se debe lanzar un error. 
 
 1. Saber para un estudiante: si tiene o no aprobada una materia, la cantidad de materias aprobadas, el promedio.
 
@@ -34,21 +35,27 @@ _Sugerencia_: mirar el método `flatten`, p.ej. probar `[[3,4],[6,8,2]].flatten(
     - el estudiante debe tener aprobadas todas las materias que se declaran como _requisitos_ de la materia a la que se quiere inscribir.  
     P.ej., para que un estudiante pueda inscribirse a Objetos 2, es necesario tener aprobadas Objetos 1 y Matemática 1.
 
-1. Inscribir un estudiante a una materia, verificando las condiciones de inscripción de la materia. Si no se cumplen las condiciones, lanzar un error.  
-Además, cada materia tiene un “cupo”, es decir, una cantidad máxima de estudiantes que se pueden inscribir. Para manejar el exceso en los cupos, las materias tienen una lista de espera, de estudiantes que quisieran cursar pero no tienen lugar 
+1. Inscribir un estudiante a una materia, verificando las condiciones de inscripción de la materia. 
+Si no se cumplen las condiciones, lanzar un error.  
+Además, cada materia tiene un “cupo”, es decir, una cantidad máxima de estudiantes que se pueden inscribir. 
+Para manejar el exceso en los cupos, las materias tienen una lista de espera, de estudiantes que quisieran cursar pero no tienen lugar 
 (ver punto 5).
 O sea, como resultado de la inscripción, el estudiante puede, o bien quedar confirmado, o bien quedar en lista de espera.  
 No se requiere que el sistema conteste nada con respecto al resultado de la inscripción. 
 
-1. Dar de baja un estudiante de una materia. En caso de haber estudiantes en lista de espera, el primer estudiante de la lista debe obtener su lugar en la materia.
+1. Dar de baja un estudiante de una materia. En caso de haber estudiantes en lista de espera, 
+el primer estudiante de la lista debe obtener su lugar en la materia.
 
 1. Brindar resultados de inscripción, específicamente:
     * Los estudiantes inscriptos a una materia dada.
     * Los estudiantes en lista de espera para una materia dada.
 
-1. Brindar información útil para une estudiante, específicamente: las materias en las que está inscripto, las materias en las que quedó en lista de espera. Para esto, usar la lista de todas las materias de las carreras que cursa, resuelto en un punto anterior.
+1. Brindar información útil para une estudiante, específicamente: las materias en las que está inscripto, 
+las materias en las que quedó en lista de espera. Para esto, usar la lista de todas las materias de las carreras que cursa, resuelto en un punto anterior.
 
-1. Más información sobre une estudiante: dada una carrera, conocer todas las materias de esa carrera a las que se puede inscribir. Sólo vale si el estudiante está cursando esa carrera.  
+1. Más información sobre une estudiante: dada una carrera, 
+conocer todas las materias de esa carrera a las que se puede inscribir. 
+Sólo vale si el estudiante está cursando esa carrera.  
 
 
 
@@ -60,7 +67,8 @@ Suponiendo que
 * Los requisitos de Programación Concurrente son Objetos 1 y Bases de Datos.
 * Biología 2 tiene como único requisito a Biología 1.
 * Roque tiene aprobadas Elementos de Programación, Matemática 1, Objetos 1, Bases de Datos, Química y Biología 1.
-* Tenemos a: Luisa, Romina y Alicia que aprobaron Elementos de Programación, Objetos 1, y Matemática 1; Ana que aprobó solamente Elementos de Programación. Todas están cursando Programación.
+* Tenemos a: Luisa, Romina y Alicia que aprobaron Elementos de Programación, Objetos 1, y Matemática 1; Ana que aprobó solamente Elementos de Programación. 
+	Todas están cursando Programación.
 * Objetos 2 tiene cupo para 3 estudiantes.
 
 Realizar estos tests:
@@ -74,7 +82,8 @@ Realizar estos tests:
 
 Contemplar que no todas las materias ponen a otras materias como requisitos. Otras opciones son:
    * Una cantidad de créditos: por ejemplo para hacer el Trabajo Final se necesita acumular 250 créditos previamente. 
-   * Por año, es decir, haber aprobado todas las materias del año anterior. Por ejemplo, para cursar Objetos 3, que es una materia de tercer año, es necesario haber aprobado todas las materias del segundo año. De cada materia se conoce a qué año pertence.
+   * Por año, es decir, haber aprobado todas las materias del año anterior. Por ejemplo, para cursar Objetos 3, que es una materia de tercer año, 
+   es necesario haber aprobado todas las materias del segundo año. De cada materia se conoce a qué año pertence.
    * Nada: Hay materias que no tienen ningún requerimiento, por ejemplo Elementos de Programación, no tiene ninguna condición especial.
 
 

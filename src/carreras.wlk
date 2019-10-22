@@ -1,11 +1,12 @@
-/*class Carrera {
-	var nombre = "nombre"
-	var materiaDeLaCarrera = []
-}
-*/
 import materias.*
 
-object programacion {
+class Carrera {
+	var nombre = "nombre"
+	var materiasDeLaCarrera = []
+}
+
+
+/*object programacion {
 	var property materiasDeLaCarrera = [new Materia(nombre = elementosDeProgramacion), 
 										new Materia(nombre = matematica1), 
 										new Materia(nombre = objetos1), 
@@ -49,3 +50,4 @@ object derecho {
 	
 }
 
+*/
